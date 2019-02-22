@@ -5,7 +5,7 @@ export default class Contact extends PureComponent {
   render() {
     const {firstName, lastName, phoneNumber} = this.props
     return (
-      <Link to
+      
       <div className="contact">
           <h3>{firstName}</h3>
           <h3>{lastName}</h3>

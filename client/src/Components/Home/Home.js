@@ -15,13 +15,13 @@ export class Home extends Component {
         id: "0001"
       },
       {
-        firstName: "Dragan",
+        firstName: "Foufou",
         lastName: "Markovic",
         phoneNumber: "+32486809823",
         id: "0001"
       },
       {
-        firstName: "Dragan",
+        firstName: "Hello",
         lastName: "Markovic",
         phoneNumber: "+32486809823",
         id: "0001"
@@ -40,9 +40,9 @@ export class Home extends Component {
   
   
   render() {
-    const {entries} = this.state
-    const results = entries.filter().map((entry, index) => {
-      return <Contact key={index} id={id} firstName={entry.firstName} lastName={entry.lastName} phoneNumber={entry.phoneNumber} />
+    const {entries, searchvalue} = this.state
+    const results = entries.filter(item => {  item.firstName =  }).map((entry, index) => {
+      return <Contact key={index} id={entry.id} firstName={entry.firstName} lastName={entry.lastName} phoneNumber={entry.phoneNumber} />
       }
     )
 
