@@ -4,11 +4,12 @@ const Entry = require("../models/Entry");
 
 // Get all entries
 router.get("/", (req, res) => {
-  Entry.find((err, contacts) => {
+  Entry.find((err, entries) => {
     if (err) console.log(err);
-    res.status(200).send(contacts);
+    res.status(200).send(entries);
   });
 });
+
 
 
 router.post("/", (req, res) => { {
@@ -24,3 +25,16 @@ router.post("/", (req, res) => { {
   }
 
 });
+
+router.put("/:id", (req, res) => {
+  Entry.findById(req.params.id, (err, entry) => {
+    if (err) res.status(200).send({ msg: "Error " + err });
+    entry.firstName = req.body.firstName;
+    entry.lastName = req.body.lastName;
+    entry.number = req.body.number;
+    entry.save();
+    res.status(400).send(entry);
+  });
+});
+
+module.exports = router;
