@@ -4,10 +4,23 @@ import Search from './Search'
 
 
 export class Home extends Component {
+  state= {
+    searchvalue: "",
+    entries:  []
+  }
+
+  fetchAll 
+
+  getResults = (input) => {
+    console.log(input)
+
+  }
+  
+  
   render() {
     return (
       <div>
-        <Search />
+        <Search getResults={this.getResults} />
         
       </div>
     )
