@@ -34,14 +34,14 @@ export class Home extends Component {
 
   getResults = (input) => {
     console.log(input);
-    this.setState({searchvalue: input})
+    this.setState({searchvalue: input.toLowerCase()})
 
   }
   
   
   render() {
     const {entries, searchvalue} = this.state
-    const results = entries.filter(item => {  item.firstName =  }).map((entry, index) => {
+    const results = entries.filter(item => item.firstName.toLowerCase().includes(searchvalue) || item.lastName.toLowerCase().includes(searchvalue) ||item.phoneNumber.toLowerCase().includes(searchvalue)).map((entry, index) => {
       return <Contact key={index} id={entry.id} firstName={entry.firstName} lastName={entry.lastName} phoneNumber={entry.phoneNumber} />
       }
     )
