@@ -16,7 +16,7 @@ app.get('/', (req, res) => res.send('Hello World!'))
 //     mongoURI,
 //     { useNewUrlParser: true }
 //   )
-//   .then(() => console.log("Connect to MongoDB"))
+//   .then(() => console.log("Connected to MongoDB"))
 //   .catch(err => console.log(err));
 
 // Middlewares
