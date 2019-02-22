@@ -10,6 +10,13 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/:id", (req, res) => {
+  Entry.findById(req.params.id, (err, entries) => {
+    if (err) console.log(err);
+    res.status(200).send(entries);
+  });
+});
+
 
 
 router.post("/", (req, res) => { {
