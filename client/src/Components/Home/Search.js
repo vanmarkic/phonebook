@@ -10,8 +10,7 @@ export class Search extends Component {
   };
 
   render() {
-    return (
-     
+    return (     
         <input  placeholder="Type in a name or number..."       
           onChange={this.handleInput}
         />
