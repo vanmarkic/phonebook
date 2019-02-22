@@ -38,7 +38,7 @@ router.put("/:id", (req, res) => {
     if (err) res.status(400).send({ msg: "Error " + err });
     entry.firstName = req.body.firstName;
     entry.lastName = req.body.lastName;
-    entry.number = req.body.number;
+    entry.phoneNumber = req.body.phoneNumber;
     entry.save();
     res.status(200).send(entry);
   });
