@@ -2,17 +2,21 @@ import React, { Component } from 'react'
 
 export default class EditEntry extends Component {
   state = {
+    
 
   }
 
   componentDidMount() {
-    console.log(this.props.entry)
+    this.setState({entryId : this.props.location.entryId})
+   
   }
 
   render() {
+    const { entryId } = this.state
+    
     return (
       <div>
-        Edit Entry
+        {entryId ? entryId : "No Id Provided"}
       </div>
     )
   }
