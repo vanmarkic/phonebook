@@ -35,12 +35,12 @@ router.post("/", (req, res) => { {
 
 router.put("/:id", (req, res) => {
   Entry.findById(req.params.id, (err, entry) => {
-    if (err) res.status(200).send({ msg: "Error " + err });
+    if (err) res.status(400).send({ msg: "Error " + err });
     entry.firstName = req.body.firstName;
     entry.lastName = req.body.lastName;
     entry.number = req.body.number;
     entry.save();
-    res.status(400).send(entry);
+    res.status(200).send(entry);
   });
 });
 

@@ -7,8 +7,8 @@ export default class NavBar extends Component {
     return (
       <div>       
           <Link to="/">Home</Link>
-          <Link to="/new">New Entry</Link>
-          <Link to="/edit">Edit</Link>         
+          <Link to="/new" >New Entry</Link>      
+                    
       </div>
     )
   }

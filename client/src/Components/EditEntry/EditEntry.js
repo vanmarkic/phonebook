@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
+
 import api from '../../api/EndpointAddress'
 
 
@@ -14,27 +15,45 @@ export default class EditEntry extends Component {
     const {entryId} = this.props.location
     axios.get(api + entryId)
       .then(entry => this.setState({entry: entry.data}))
-      .catch(err => this.setState({err}))     }
+      .catch(err => this.setState({err}))     
+    
+  
+    }
 
+      
   handleChange = (e) => {
-    const { id, value} = e.currentTarget
-    const { id } = this.state.entry
-    // console.log(this.state.entry);
-    this.setState({id: value })
+    const {value, id} = e.currentTarget
+    if (id === 'firstName') {
+      this.setState({ entry: {...this.state.entry, firstName: value} });  
+    } else if (id === 'lastName') {
+      this.setState({ entry: {...this.state.entry, lastName: value} });  
+    } else {
+      this.setState({ entry: {...this.state.entry, phoneNumber: value} });  
+    }
   }
+
   
   postChanges() {
-    console.log("button working")
-  }
+    const { firstName, lastName, phoneNumber, _id} = this.state.entry
+    axios
+      .put(api + _id, {
+        firstName,
+        lastName,
+        phoneNumber,
+      })
+      .then(resp => console.log(resp))
+      .catch(err => console.log(err))
+      .then(() => this.props.history.replace('/'));
+}
+
 
   render() {
 
-    console.log(this.state.entry)
-    const { entryId, entry } = this.state
+     const { entry } = this.state
     
-    return (
-      <div>
+    return (      <div>
         {entry ?  <>
+                    
                     <input id="firstName" value={entry.firstName} onChange={this.handleChange} />
                     <input id="lastName" value={entry.lastName} onChange={this.handleChange}/>
                     <input id="phoneNumber" value={entry.phoneNumber} onChange={this.handleChange}/> 
