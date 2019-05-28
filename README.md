@@ -1,4 +1,5 @@
-# Kata
+# Kata : A basic phonebook using React and Node.js
+This was executed in a 4 hours span and was the technical test of a recruitment process
 
 ## 
 To run it :
@@ -15,7 +16,7 @@ In `./backend/` run `npm install` then  `node server.js`.
 
 **Dragan Markovic**
 
-This was executed in a 4 hours span and was the technical test of a recruitment process
+
 ## Instructions given by the employer:
 
 # Phonebook
