@@ -16,10 +16,9 @@ In `./backend/` run `npm install` then  `node server.js`.
 
 **Dragan Markovic**
 
+___________________
 
 ## Instructions given by the employer:
-
-# Phonebook
 You have to build a web application that provides a phonebook.
 
 ## Entries
